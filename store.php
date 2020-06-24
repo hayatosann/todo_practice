@@ -15,5 +15,6 @@ $task = new Task();
 $task->create([$title, $contents, $currentTime]);
 
 // リダイレクト
+// 組み込み関数
 header('Location: index.php');
 exit;
