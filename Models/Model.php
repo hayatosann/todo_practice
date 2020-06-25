@@ -34,6 +34,7 @@ class Model
         $stmt = $this->db_manager->dbh->prepare('SELECT * FROM ' . $this->table);
 
 
+
         // $dbh === PDOクラスのインスタンス
         // $dbh->prepare('SELECT * FROM ' . $this->table);
 
