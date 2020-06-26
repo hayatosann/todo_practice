@@ -66,7 +66,9 @@ $tasks = $task->getAll();
                             </p>
                             <div class="text-right d-flex justify-content-end">
                                 <!-- * href内を変更する -->
-                                <a href="edit.php" class="btn text-success">EDIT</a>
+                                <a href="edit.php?id=<?php echo h($task['id']);?>" class="btn text-success">EDIT</a>
+                                <!-- //GET送信 -->
+                                <!-- formはGET送信でもPOSTでも指定可 -->
                                 <form action="delete.php" method="post">
                                     <!-- * valueの中にtaskのidが入るようにする -->
                                     <input type="hidden" name="id" value="<?php echo h($task['id']);?>">

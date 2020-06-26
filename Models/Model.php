@@ -49,9 +49,23 @@ class Model
     }
 
     // * findById()を以下に追加する
+    public function findByID($id){
 
+        // データベース準備
+        $stmt = $this->db_manager->dbh->prepare('SELECT*FROM ' . $this->table . ' WHERE id = ?');
 
-    
+        // 実行
+        $stmt->execute([$id]);
+
+        $task = $stmt->fetch();
+
+        // fetchは1行ごとに取得
+        // fetchAllは複数を一気に取得
+
+        // 反映させる、edit.phpに返す、returnでこの値を返す
+         return $task;
+        
+    }
 
     
     public function delete($data)
