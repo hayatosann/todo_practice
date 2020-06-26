@@ -1,13 +1,15 @@
 <?php
 // * 下記を追加
 // 1. ファイルの読み込み
-
+require_once('Models/Task.php');
 
 // 2. データの受け取り
+$id = $_GET['id'];
 
-
-// 3. DBへのデータ保存
-
+// 3. DBからデータを取得
+$task = new Task();
+$task = $task->findByID($id);
+// var_dump($task);
 
 ?>
 <!DOCTYPE html>
@@ -51,7 +53,7 @@
                     <input type="hidden" name="id" value="<?= h($task['id']); ?>">
                     <div class="d-flex justify-content-end">
                         <button type="submit" class="btn btn-primary">UPDATE</button>
-                    </div>
+                    </div>             
                 </form>
             </div>
         </div>
